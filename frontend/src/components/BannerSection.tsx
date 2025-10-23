@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Imagem from "../assets/imgs/banner1.png";
-
+import Imagem2 from "../assets/imgs/banner2.png";
 interface Banner {
   id: number;
   bgColor: string;
@@ -78,6 +78,23 @@ const BannerSection: React.FC = () => {
           className="
             hidden lg:block
             absolute inset-y-0 right-0
+            h-full w-auto
+            max-w-[480px]
+            object-contain
+            pointer-events-none select-none
+            z-10
+          "
+        />
+      )}
+
+      
+      {banner.id === 2 && (
+        <img
+          src={Imagem2}
+          alt="Banner ilustrativo"
+          className="
+            hidden lg:block
+            absolute inset-y-0 right-12
             h-full w-auto
             max-w-[480px]
             object-contain
