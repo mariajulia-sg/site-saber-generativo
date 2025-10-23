@@ -2,6 +2,7 @@ import React from "react";
 import InfoCardsSection, { InfoCardItem } from "../components/InfoCardsSection";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import FormSection from "../components/FormsSection";
 
 const WhoWeArePage: React.FC = () => {
   const cardsData: InfoCardItem[] = [
@@ -14,11 +15,6 @@ const WhoWeArePage: React.FC = () => {
       title: "Maria Júlia Lorenzoni",
       subtitle: "Desenvolvedora de Software",
       description: "Responsável pelo desenvolvimento das soluções da Saber Generativo, implementação de funcionalidades e manutenção da plataforma. Atua com foco em qualidade de código, inovação e integração de tecnologias para atender às necessidades da equipe e dos clientes.",
-    },
-    {
-      title: "Pamela",
-      subtitle: "Administração",
-      description: "Organiza e coordena todas as atividades administrativas da Saber Generativo, garantindo que processos internos funcionem de maneira eficiente e que a equipe tenha suporte para focar em suas responsabilidades principais.",
     },
     {
       title: "Sofia",
@@ -49,6 +45,13 @@ const WhoWeArePage: React.FC = () => {
           titleColor="#174980"
           />
       </div>
+
+        <FormSection
+        title="O que podemos construir juntos?"
+        bgColor="#174980"
+        buttonColor="#05A694"
+        buttonText="Conversar"
+      />
       <Footer />
     </div>
   );

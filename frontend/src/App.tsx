@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import PhilosophyPage from "./pages/PhilosophyPage";
 import InsightsPage from "./pages/InsightsPage";
 import WhoWeArePage from "./pages/WhoWeArePage";
+import ContactPage from "./pages/ContactPage";
 function App() {
   return (
     <Router>
@@ -14,6 +15,7 @@ function App() {
         <Route path="/filosofia" element={<PhilosophyPage />} />
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/quem-somos" element={<WhoWeArePage />} />
+        <Route path="/contato" element={<ContactPage />} />
       </Routes>
     </Router>
   );

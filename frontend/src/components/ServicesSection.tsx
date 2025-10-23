@@ -10,7 +10,6 @@ interface Service {
 const services: Service[] = [
   { title: "Consultoria", description: "Oferecemos consultoria personalizada para otimizar seus processos.", link: "/consultoria" },
   { title: "Desenvolvimento", description: "Criação de soluções web e mobile de alta performance.", link: "/desenvolvimento" },
-  { title: "Suporte", description: "Suporte técnico e manutenção contínua para garantir eficiência.", link: "/suporte" },
   { title: "Treinamentos", description: "Capacitação e workshops para sua equipe.", link: "/treinamentos" },
 ];
 
@@ -22,7 +21,7 @@ const ServicesSection: React.FC = () => {
           Portfólio
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Link
               key={index}

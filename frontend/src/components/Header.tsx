@@ -4,7 +4,7 @@ import logo from '../assets/imgs/logo.png';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false); // Mobile submenu
+  const [isPortfolioOpen, setIsPortfolioOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
@@ -35,12 +35,6 @@ const Header: React.FC = () => {
               className="block px-4 py-2 hover:bg-[#F0FDF9] rounded-lg transition-colors"
             >
               Desenvolvimento
-            </Link>
-            <Link 
-              to="/suporte" 
-              className="block px-4 py-2 hover:bg-[#F0FDF9] rounded-lg transition-colors"
-            >
-              Suporte
             </Link>
             <Link 
               to="/treinamentos" 

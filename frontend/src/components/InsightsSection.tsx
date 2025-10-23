@@ -24,7 +24,7 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
   const displayItems = [...items, ...items];
   return (
     <section
-      className="w-full px-6 sm:px-12 md:px-28 lg:px-30 mb-20 overflow-hidden"
+      className="w-full px-6 sm:px-12 md:px-28 lg:px-30 mb-10 overflow-hidden"
       style={{ backgroundColor: bgColor }}
     >
       <div className="max-w-7xl mx-auto">
