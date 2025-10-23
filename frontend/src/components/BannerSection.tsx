@@ -54,14 +54,15 @@ const BannerSection: React.FC = () => {
       }}
     >
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between px-6 lg:px-8 relative z-20">
-        <div className="flex-1 text-left max-w-[650px] pt-20 pb-8 z-30">
+        <div className="flex-1 text-left max-w-[650px] pt-10 lg:pt-20 pb-8 z-30">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-serif leading-tight">
             {banner.title}
           </h2>
           <p className="mb-8 text-lg font-inter opacity-95">{banner.text}</p>
           <Link
             to={banner.link}
-            className="inline-block bg-[#153E66] text-white hover:bg-[#1d4f82] px-10 py-4 rounded-lg font-medium text-lg transition"
+            className="inline-block bg-[#153E66] text-white hover:bg-[#1d4f82] px-8 py-4
+            rounded-lg font-medium text-lg transition"
           >
             {banner.buttonText}
           </Link>
@@ -89,7 +90,7 @@ const BannerSection: React.FC = () => {
     <div
         className="
           absolute 
-          bottom-4 sm:bottom-6 lg:bottom-8 
+          bottom-2 sm:bottom-4 lg:bottom-8 
           left-1/2 -translate-x-1/2 
           flex space-x-3 z-30
         "

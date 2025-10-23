@@ -31,7 +31,7 @@ const InfoCardsSection: React.FC<InfoCardsSectionProps> = ({
       <div className={`grid grid-cols-1 sm:grid-cols-${columns} gap-6 max-w-7xl mx-auto`}>
         {items.map((item, index) => (
           <div
-            key={index} // usando índice como ID automático
+            key={index}
             className={`p-6 rounded-xl shadow-md hover:shadow-lg transition-transform duration-200`}
             style={{ backgroundColor: cardBgColor }}
           >

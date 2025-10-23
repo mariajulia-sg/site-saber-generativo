@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Header from "../components/Header";
 import BannerSection from "../components/BannerSection";
 import SloganSection from "../components/SloganSection";
@@ -12,9 +12,21 @@ import Img1 from "../assets/imgs/blog1.png";
 import Img2 from "../assets/imgs/blog2.png";
 import Img3 from "../assets/imgs/blog3.png"; 
 import { FadeInWhenVisible } from "../components/ScrollAnimations";
-const Home: React.FC = () => {
 
-    const insightsData: InsightItem[] = [
+const Home: React.FC = () => {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+
+    handleResize(); 
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const insightsData: InsightItem[] = [
     {
       id: 1,
       image: Img1,
@@ -43,19 +55,18 @@ const Home: React.FC = () => {
         <SloganSection />
         <ServicesSection />
         <InfoSection />
-
         <PhilosophySection />
-        
         <FadeInWhenVisible>
           <CasesSection />
         </FadeInWhenVisible>
 
-    <FadeInWhenVisible>
-      <InsightsSection title="Insights" items={insightsData} infiniteScroll={true}/>
-    </FadeInWhenVisible>
+        {isDesktop && (
+          <FadeInWhenVisible>
+            <InsightsSection title="Insights" items={insightsData} infiniteScroll={true} />
+          </FadeInWhenVisible>
+        )}
       </main>
-        <Footer />
-
+      <Footer />
     </div>
   );
 };
