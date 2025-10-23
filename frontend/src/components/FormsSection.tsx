@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ReactComponent as WhatsAppLogo } from "../assets/imgs/whatsapp-logo-4456.svg";
+import ModalSection from "./ModalSection";
 
 interface FormSectionProps {
   title?: string;
@@ -20,7 +21,11 @@ const FormSection: React.FC<FormSectionProps> = ({
     company: "",
     phone: "",
     message: "",
+    "bot-field": "",
   });
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,6 +33,9 @@ const FormSection: React.FC<FormSectionProps> = ({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Bloqueia bots
+    if (formData["bot-field"]) return;
 
     try {
       await fetch("/", {
@@ -38,11 +46,14 @@ const FormSection: React.FC<FormSectionProps> = ({
           ...formData,
         }).toString(),
       });
-      alert("Mensagem enviada!");
-      setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+
+      setFormData({ name: "", email: "", company: "", phone: "", message: "", "bot-field": "" });
+      setModalMessage("Mensagem enviada com sucesso!");
+      setModalOpen(true);
     } catch (err) {
+      setModalMessage("Erro ao enviar a mensagem. Tente novamente.");
+      setModalOpen(true);
       console.error(err);
-      alert("Erro ao enviar a mensagem. Tente novamente.");
     }
   };
 
@@ -59,6 +70,7 @@ const FormSection: React.FC<FormSectionProps> = ({
           className="flex flex-col gap-6"
         >
           <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" value={formData["bot-field"]} />
 
           <div className="grid grid-cols-1 gap-6">
             <input
@@ -126,6 +138,12 @@ const FormSection: React.FC<FormSectionProps> = ({
       >
         <WhatsAppLogo className="w-16 h-16" />
       </a>
+
+      <ModalSection
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        message={modalMessage}
+      />
     </section>
   );
 };
