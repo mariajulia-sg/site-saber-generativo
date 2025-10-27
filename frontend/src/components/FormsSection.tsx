@@ -7,6 +7,7 @@ interface FormSectionProps {
   bgColor?: string;
   buttonColor?: string;
   buttonText?: string;
+  titleColor?: string; // ← nova prop
 }
 
 const FormSection: React.FC<FormSectionProps> = ({
@@ -14,6 +15,7 @@ const FormSection: React.FC<FormSectionProps> = ({
   bgColor = "#FAFDFF",
   buttonColor = "#FBAC50",
   buttonText = "CONVERSAR",
+  titleColor = "#F5FAFB", // ← cor padrão
 }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,15 +29,16 @@ const FormSection: React.FC<FormSectionProps> = ({
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Bloqueia bots
-    if (formData["bot-field"]) return;
+    if (formData["bot-field"]) return; // bloqueio de bots
 
     try {
       await fetch("/", {
@@ -47,7 +50,14 @@ const FormSection: React.FC<FormSectionProps> = ({
         }).toString(),
       });
 
-      setFormData({ name: "", email: "", company: "", phone: "", message: "", "bot-field": "" });
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        phone: "",
+        message: "",
+        "bot-field": "",
+      });
       setModalMessage("Mensagem enviada com sucesso!");
       setModalOpen(true);
     } catch (err) {
@@ -58,9 +68,18 @@ const FormSection: React.FC<FormSectionProps> = ({
   };
 
   return (
-    <section className="w-full py-12 px-6 md:px-20 relative" style={{ backgroundColor: bgColor }}>
+    <section
+      className="w-full py-12 px-6 md:px-20 relative"
+      style={{ backgroundColor: bgColor }}
+    >
       <div className="max-w-3xl mx-auto flex flex-col gap-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#F5FAFB] text-center font-serif">{title}</h2>
+        {/* cor do título personalizada */}
+        <h2
+          className="text-3xl md:text-4xl font-bold text-center font-serif"
+          style={{ color: titleColor }}
+        >
+          {title}
+        </h2>
 
         <form
           name="contact"

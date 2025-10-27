@@ -13,8 +13,6 @@ const ContactForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Futuro envio via API
-    console.log(formData);
     alert("Mensagem enviada! (simulação)");
     setFormData({ name: "", email: "", message: "" });
   };
@@ -27,7 +25,6 @@ const ContactForm: React.FC = () => {
           className="max-w-2xl mx-auto bg-white p-8 rounded shadow"
           onSubmit={handleSubmit}
         >
-          {/* Nome */}
           <div className="mb-4">
             <label className="block text-gray-700 mb-2" htmlFor="name">
               Nome
@@ -42,7 +39,6 @@ const ContactForm: React.FC = () => {
             />
           </div>
 
-          {/* Email */}
           <div className="mb-4">
             <label className="block text-gray-700 mb-2" htmlFor="email">
               E-mail
@@ -57,7 +53,6 @@ const ContactForm: React.FC = () => {
             />
           </div>
 
-          {/* Mensagem */}
           <div className="mb-4">
             <label className="block text-gray-700 mb-2" htmlFor="message">
               Mensagem
@@ -72,7 +67,6 @@ const ContactForm: React.FC = () => {
             />
           </div>
 
-          {/* Botão */}
           <button
             type="submit"
             className="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition-colors"

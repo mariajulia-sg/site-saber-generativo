@@ -3,9 +3,11 @@ import React from "react";
 export interface InfoCardItem {
   title: string;
   subtitle?: string;
-  description: string;
-  imageSrc?: string; 
+  function?: string;
+  description: string | React.ReactNode;
+  imageSrc?: string;
 }
+
 
 interface InfoCardsSectionProps {
   items: InfoCardItem[];
@@ -47,6 +49,11 @@ const InfoCardsSection: React.FC<InfoCardsSectionProps> = ({
               <h4 className="text-xl text-center font-semibold mb-4" style={{ color: subtitleColor }}>
                 {item.subtitle}
               </h4>
+            )}
+            {item.function && (
+              <h5 className="text-md text-center font-medium mb-4 italic" style={{ color: subtitleColor }}>
+                {item.function}
+              </h5>
             )}
             <p className="text-justify leading-relaxed" style={{ color: textColor }}>
               {item.description}

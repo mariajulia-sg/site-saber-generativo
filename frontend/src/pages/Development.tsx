@@ -40,7 +40,7 @@ const DevelopmentPage: React.FC = () => {
         title="Desenvolvimento de Soluções"
         sections={[
           {
-            text: "A inovação constrói-se juntos. Através do nosso Desenvolvimento de Soluções, construímos e integramos ferramentas de IA Generativa à medida para resolver os desafios que você nos apresentar. Com a nossa experiência e a sua visão, criamos soluções que se encaixam perfeitamente nos seus processos, otimizando o seu trabalho e impulsionando o seu crescimento.",
+            text: "A inovação se constrói em parceria. Por meio do nosso serviço de Desenvolvimento de Soluções, integramos ferramentas de Inteligência Artificial Generativa e softwares personalizados às necessidades específicas de cada cliente. Com a nossa experiência técnica e a sua visão de negócio, entregamos soluções que se encaixam perfeitamente nos seus processos, otimizam o trabalho da sua equipe e impulsionam o crescimento da sua empresa.",
           },
         ]}
         imageSrc={DesenvolvimentoWeb}

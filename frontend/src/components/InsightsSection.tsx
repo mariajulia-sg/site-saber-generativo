@@ -20,8 +20,8 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
   bgColor = "#F9FBFC",
   infiniteScroll = false,
 }) => {
-
   const displayItems = [...items, ...items];
+
   return (
     <section
       className="w-full px-6 sm:px-12 md:px-28 lg:px-30 mb-10 overflow-hidden"
@@ -53,9 +53,14 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
                       className="w-full h-56 sm:h-64 object-cover rounded-xl hover:scale-105 transition-transform duration-300"
                     />
                   </a>
-                  <h3 className="mt-4 text-lg font-semibold text-[#0F172A] font-serif leading-snug hover:text-[#1E3A8A] transition-colors duration-200">
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 block text-lg font-semibold text-[#0F172A] font-serif leading-snug hover:text-[#1E3A8A] transition-colors duration-200"
+                  >
                     {item.title}
-                  </h3>
+                  </a>
                 </div>
               ))}
             </div>
@@ -76,9 +81,14 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
                     className="w-full h-56 sm:h-64 md:h-72 object-cover rounded-xl hover:scale-105 transition-transform duration-300"
                   />
                 </a>
-                <h3 className="mt-4 text-base sm:text-lg md:text-xl font-semibold text-[#0F172A] font-serif leading-snug hover:text-[#1E3A8A] transition-colors duration-200">
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 block text-base sm:text-lg md:text-xl font-semibold text-[#0F172A] font-serif leading-snug hover:text-[#1E3A8A] transition-colors duration-200"
+                >
                   {item.title}
-                </h3>
+                </a>
               </div>
             ))}
           </div>

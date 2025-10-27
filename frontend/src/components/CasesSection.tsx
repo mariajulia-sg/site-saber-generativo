@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Img1 from "../assets/imgs/ImgWecom.png";
-import Img2 from "../assets/imgs/ritmoPorKm.png";
+import Img1 from "../assets/imgs/wecom.png";
+import Img2 from "../assets/imgs/ImgRitmo.png";
 
 const CasesSection: React.FC = () => {
   const cases = [
@@ -34,7 +34,7 @@ const CasesSection: React.FC = () => {
               key={item.id}
               to={item.link}
               className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col"
-            >
+             >
               <img
                 src={item.image}
                 alt={item.title}
