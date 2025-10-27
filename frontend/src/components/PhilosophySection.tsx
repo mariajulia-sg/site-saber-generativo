@@ -21,6 +21,7 @@ const PhilosophySection: React.FC = () => {
       imageAlt="Filosofia da empresa"
       bgColor="#F9FBFC"
       fadeInOnVisible={true}
+      
     />
   );
 };

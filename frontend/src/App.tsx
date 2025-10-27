@@ -6,6 +6,12 @@ import PhilosophyPage from "./pages/PhilosophyPage";
 import InsightsPage from "./pages/InsightsPage";
 import WhoWeArePage from "./pages/WhoWeArePage";
 import ContactPage from "./pages/ContactPage";
+import CasesPage from "./pages/Cases";
+import WecomCasePage from "./pages/Cases/Wecom";
+import RitmoPorKmCasePage from "./pages/Cases/RitmoPorKm";
+import FCRCasePage from "./pages/Cases/FCR";
+import LeaoCasePage from "./pages/Cases/Leao";
+
 function App() {
   return (
     <Router>
@@ -16,6 +22,11 @@ function App() {
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/quem-somos" element={<WhoWeArePage />} />
         <Route path="/contato" element={<ContactPage />} />
+        <Route path="/cases" element={<CasesPage />} />
+        <Route path="/cases/wecom" element={<WecomCasePage />} />
+        <Route path="/cases/ritmo-por-km" element={<RitmoPorKmCasePage />} />
+        <Route path="/cases/fcr" element={<FCRCasePage />} />
+        <Route path="/cases/representacoes-leao" element={<LeaoCasePage />} />
       </Routes>
     </Router>
   );

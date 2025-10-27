@@ -3,7 +3,7 @@ import { FadeInImageWhenVisible } from "./ScrollAnimations";
 
 interface MainInfoSectionProps {
   bgColor?: string;
-  title: string;
+  title?: string;
   sections: {
     subtitle?: string;
     text: string;
@@ -13,6 +13,7 @@ interface MainInfoSectionProps {
   reverse?: boolean;
   hideImageOnMobile?: boolean;
   fadeInOnVisible?: boolean;
+  centerImageInsteadOfTitle?: boolean;
 }
 
 const MainInfoSection: React.FC<MainInfoSectionProps> = ({
@@ -24,6 +25,7 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
   reverse = false,
   hideImageOnMobile = true,
   fadeInOnVisible = false,
+  centerImageInsteadOfTitle = false,
 }) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const [visible, setVisible] = useState(false);
@@ -56,21 +58,58 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
       style={{ backgroundColor: bgColor }}
     >
       <div
-        className={`max-w-7xl mx-auto flex flex-col ${
-          reverse ? "md:flex-row-reverse" : "md:flex-row"
-        } items-start md:items-center justify-between gap-8 md:gap-16`}
+        className={`max-w-7xl mx-auto flex flex-col md:flex-row ${
+          reverse && !centerImageInsteadOfTitle ? "md:flex-row-reverse" : ""
+        } items-start justify-between gap-8 md:gap-16 ${
+          centerImageInsteadOfTitle ? "items-center" : ""
+        }`}
       >
-        <div className="md:w-1/2 font-serif text-left md:pl-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-8 sm:mb-10">
-            {title}
-          </h2>
+        {/* Texto */}
+        <div
+          className={`font-serif flex flex-col ${
+            centerImageInsteadOfTitle
+              ? "items-center text-center w-full max-w-3xl mx-auto"
+              : "md:w-1/2 items-start text-left md:pl-4"
+          }`}
+        >
+          {/* Se imagem centralizada */}
+          {centerImageInsteadOfTitle && imageSrc ? (
+            <div className="flex justify-center mb-6 w-full">
+              {fadeInOnVisible ? (
+                <FadeInImageWhenVisible>
+                  <img
+                    src={imageSrc}
+                    alt={imageAlt || "Imagem ilustrativa"}
+                    className="w-full max-w-[420px] rounded-2xl object-contain"
+                    style={{ maxHeight: "420px" }}
+                  />
+                </FadeInImageWhenVisible>
+              ) : (
+                <img
+                  src={imageSrc}
+                  alt={imageAlt || "Imagem ilustrativa"}
+                  className="w-full max-w-[420px] rounded-2xl object-contain"
+                  style={{ maxHeight: "420px" }}
+                />
+              )}
+            </div>
+          ) : (
+            title && (
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#0F172A] mb-8 sm:mb-10 text-center md:text-left">
+                {title}
+              </h2>
+            )
+          )}
 
-          <div className="space-y-8 sm:space-y-10">
+          {/* Seções de texto */}
+          <div className="space-y-6 sm:space-y-8">
             {sections.map((section, index) => (
               <div key={index}>
-                <h3 className="text-xl font-semibold text-[#0F172A] mb-2">
-                  {section.subtitle}
-                </h3>
+                {section.subtitle && (
+                  <h3 className="text-xl font-semibold text-[#0F172A] mb-2">
+                    {section.subtitle}
+                  </h3>
+                )}
                 <p className="text-gray-600 leading-relaxed text-base sm:text-lg font-sans">
                   {section.text}
                 </p>
@@ -79,7 +118,8 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
           </div>
         </div>
 
-        {imageSrc && (
+        {/* Imagem lateral */}
+        {!centerImageInsteadOfTitle && imageSrc && (
           <div
             className={`md:w-1/2 flex justify-center ${
               hideImageOnMobile ? "hidden md:flex" : ""

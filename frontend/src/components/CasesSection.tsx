@@ -1,5 +1,5 @@
 import React from "react";
-import Img1 from "../assets/imgs/escolaSabedoria.png";
+import Img1 from "../assets/imgs/ImgWecom.png";
 import Img2 from "../assets/imgs/ritmoPorKm.png";
 
 const CasesSection: React.FC = () => {
@@ -7,14 +7,16 @@ const CasesSection: React.FC = () => {
     {
       id: 1,
       image: Img1,
-      title: "Escola da Sabedoria",
-      text: "Corpo de texto para adicionar mais informações, além do subtítulo.",
+      title: "Wecom",
+      text: "Transformando a comunicação corporativa com estratégia e IA.",
+      link: "/cases/wecom",
     },
     {
       id: 2,
       image: Img2,
       title: "Ritmo por KM",
-      text: "Corpo de texto para explicar melhor o ponto principal.",
+      text: "Profissionalização e inovação na gestão de eventos esportivos",
+      link: "/cases/ritmo-por-km",
     },
   ];
 
@@ -27,8 +29,9 @@ const CasesSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
           {cases.map((item) => (
-            <div
+            <a
               key={item.id}
+              href={item.link}
               className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col"
             >
               <img
@@ -44,7 +47,7 @@ const CasesSection: React.FC = () => {
                   {item.text}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

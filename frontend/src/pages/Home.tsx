@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import BannerSection from "../components/BannerSection";
 import SloganSection from "../components/SloganSection";
@@ -10,20 +10,17 @@ import InsightsSection, { InsightItem } from "../components/InsightsSection";
 import Footer from "../components/Footer";
 import Img1 from "../assets/imgs/blog1.png";
 import Img2 from "../assets/imgs/blog2.png";
-import Img3 from "../assets/imgs/blog3.png"; 
+import Img3 from "../assets/imgs/blog3.png";
 import { FadeInWhenVisible } from "../components/ScrollAnimations";
 
 const Home: React.FC = () => {
-  const [isDesktop, setIsDesktop] = useState(false);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-
-    handleResize(); 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    const checkIsMobile = () => setIsMobile(window.innerWidth <= 400);
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
   }, []);
 
   const insightsData: InsightItem[] = [
@@ -36,13 +33,13 @@ const Home: React.FC = () => {
     {
       id: 2,
       image: Img2,
-      title: "Titulo 2",
+      title: "Título 2",
       link: "https://seudominio.com/blog/design-e-tecnologia",
     },
     {
       id: 3,
       image: Img3,
-      title: "Titulo 3",
+      title: "Título 3",
       link: "https://seudominio.com/blog/empatia-na-inovacao",
     },
   ];
@@ -56,15 +53,18 @@ const Home: React.FC = () => {
         <ServicesSection />
         <InfoSection />
         <PhilosophySection />
+
         <FadeInWhenVisible>
           <CasesSection />
         </FadeInWhenVisible>
 
-        {isDesktop && (
-          <FadeInWhenVisible>
-            <InsightsSection title="Insights" items={insightsData} infiniteScroll={true} />
-          </FadeInWhenVisible>
-        )}
+        <FadeInWhenVisible>
+          <InsightsSection
+            title="Insights"
+            items={insightsData}
+            infiniteScroll={!isMobile}
+          />
+        </FadeInWhenVisible>
       </main>
       <Footer />
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import MainInfoSection from "../components/MainInfoSection";
-import ConsultoriaImg from "../assets/imgs/consultoria.png"; // ajuste o caminho real da imagem
+import ConsultoriaImg from "../assets/imgs/consultoria.png";
 import Header from "../components/Header";
 import InfoGridSection from "../components/InfoGridSection";
 import FormSection from "../components/FormsSection";
