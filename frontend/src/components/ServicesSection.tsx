@@ -8,9 +8,9 @@ interface Service {
 }
 
 const services: Service[] = [
-  { title: "Consultoria", description: "Oferecemos consultoria personalizada para otimizar seus processos.", link: "/consultoria" },
-  { title: "Desenvolvimento", description: "Criação de soluções web e mobile de alta performance.", link: "/desenvolvimento" },
-  { title: "Treinamentos", description: "Capacitação e workshops para sua equipe.", link: "/treinamentos" },
+  { title: "Consultoria Estratégica", description: "Oferecemos consultoria personalizada para otimizar seus processos.", link: "/consultoria" },
+  { title: "Desenvolvimento de Soluções", description: "Criação de soluções web e mobile de alta performance.", link: "/desenvolvimento" },
+  { title: "Treinamento Personalizado", description: "Capacitação e workshops para sua equipe.", link: "/treinamentos" },
 ];
 
 const ServicesSection: React.FC = () => {

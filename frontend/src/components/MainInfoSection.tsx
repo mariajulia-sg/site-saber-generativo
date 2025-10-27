@@ -7,9 +7,14 @@ interface MainInfoSectionProps {
   sections: {
     subtitle?: string;
     text: string;
+    cta?: {
+      text: string;
+      link: string;
+    };
   }[];
   imageSrc?: string;
   imageAlt?: string;
+  videoSrc?: string; // nova prop para vídeo
   reverse?: boolean;
   hideImageOnMobile?: boolean;
   fadeInOnVisible?: boolean;
@@ -22,6 +27,7 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
   sections,
   imageSrc,
   imageAlt,
+  videoSrc,
   reverse = false,
   hideImageOnMobile = true,
   fadeInOnVisible = false,
@@ -64,7 +70,6 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
           centerImageInsteadOfTitle ? "items-center" : ""
         }`}
       >
-        {/* Texto */}
         <div
           className={`font-serif flex flex-col ${
             centerImageInsteadOfTitle
@@ -72,7 +77,6 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
               : "md:w-1/2 items-start text-left md:pl-4"
           }`}
         >
-          {/* Se imagem centralizada */}
           {centerImageInsteadOfTitle && imageSrc ? (
             <div className="flex justify-center mb-6 w-full">
               {fadeInOnVisible ? (
@@ -101,7 +105,6 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
             )
           )}
 
-          {/* Seções de texto */}
           <div className="space-y-6 sm:space-y-8">
             {sections.map((section, index) => (
               <div key={index}>
@@ -110,22 +113,45 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
                     {section.subtitle}
                   </h3>
                 )}
-                <p className="text-gray-600 leading-relaxed text-base sm:text-lg font-sans">
+                <p className="text-gray-600 leading-relaxed text-base sm:text-lg font-sans mb-4">
                   {section.text}
                 </p>
+
+                {section.cta && (
+                  <a
+                    href={section.cta.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-6 py-3 bg-[#174980] text-white font-semibold rounded-lg shadow hover:bg-[#0F1F5A] transition-colors duration-200"
+                  >
+                    {section.cta.text}
+                  </a>
+                )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Imagem lateral */}
-        {!centerImageInsteadOfTitle && imageSrc && (
+        {!centerImageInsteadOfTitle && (imageSrc || videoSrc) && (
           <div
             className={`md:w-1/2 flex justify-center ${
               hideImageOnMobile ? "hidden md:flex" : ""
             }`}
           >
-            {fadeInOnVisible ? (
+            {videoSrc ? (
+              <div className="w-full max-w-[520px] rounded-2xl overflow-hidden shadow-lg">
+                <iframe
+                  width="100%"
+                  height="315"
+                  src={videoSrc}
+                  title={title || "Vídeo"}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="rounded-2xl"
+                ></iframe>
+              </div>
+            ) : fadeInOnVisible ? (
               <FadeInImageWhenVisible>
                 <img
                   src={imageSrc}

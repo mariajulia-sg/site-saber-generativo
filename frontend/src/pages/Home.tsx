@@ -28,19 +28,19 @@ const Home: React.FC = () => {
       id: 1,
       image: Img1,
       title: "ChatGPT foi só o começo: conheça as novas fronteiras da IA",
-      link: "https://docs.google.com/document/d/1HOSYbDiLmP0m0K7HPWYD4aYFpVJDjOEvcJOOFNpGwe8/edit?tab=t.0",
+      link: "https://drive.google.com/file/d/1c9cwDzBdO9xYA8dF1PD4CmM-PeMIRkbo/view?usp=sharing",
     },
     {
       id: 2,
       image: Img2,
-      title: "Título 2",
-      link: "https://seudominio.com/blog/design-e-tecnologia",
+      title: "Além do ChatGPT: Os Tipos e as Tendências que Estão Redefinindo os Grandes Modelos de Linguagem (LLMs)",
+      link: "https://drive.google.com/file/d/1ost6NICfDA-8Xji8SPI9pK2PvgIHcpFp/view?usp=sharing",
     },
     {
       id: 3,
       image: Img3,
-      title: "Título 3",
-      link: "https://seudominio.com/blog/empatia-na-inovacao",
+      title: "O Modelo Maritaca e a Busca Brasileira pela Liderança em LLMs",
+      link: "https://drive.google.com/file/d/1e0z51jynvHD0v7RvFUgbrwij6Rf3d-MC/view?usp=sharing",
     },
   ];
 

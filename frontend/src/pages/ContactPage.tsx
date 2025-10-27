@@ -24,9 +24,9 @@ const ContactPage: React.FC<ContactPageProps> = ({
   imageAlt = "Equipe Saber Generativo",
   reverse = false,
   hideImageOnMobile = true,
-  email = "contato@sabergenerativo.com",
+  email = "lftm.iag@gmail.com ",
   linkedin = "https://www.linkedin.com/company/saber-generativo/",
-  phone = "+55 (11) 99999-9999",
+  phone = "+55 53 9115-3651",
 }) => {
   return (
     <div className="min-h-screen flex flex-col bg-[#F9FBFC]">
@@ -41,7 +41,6 @@ const ContactPage: React.FC<ContactPageProps> = ({
             reverse ? "md:flex-row-reverse" : "md:flex-row"
           } items-start md:items-center justify-between gap-10 md:gap-16`}
         >
-          {/* Bloco de texto */}
           <div className="md:w-1/2 font-serif text-left md:pl-4 mt-20">
             <h1 className="text-4xl sm:text-5xl font-bold text-[#0F172A] mb-6">
               {title}
@@ -52,7 +51,6 @@ const ContactPage: React.FC<ContactPageProps> = ({
             </p>
 
             <div className="space-y-6">
-              {/* Email */}
               <a
                 href={`mailto:${email}`}
                 className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition"
@@ -61,8 +59,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                 <span>{email}</span>
               </a>
 
-              {/* LinkedIn */}
-              <a
+              {/* <a
                 href={linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -70,9 +67,8 @@ const ContactPage: React.FC<ContactPageProps> = ({
               >
                 <Linkedin className="w-5 h-5" />
                 <span>{linkedin.replace("https://", "")}</span>
-              </a>
+              </a> */}
 
-              {/* Telefone */}
               <a
                 href={`tel:${phone}`}
                 className="flex items-center gap-3 text-gray-700 hover:text-blue-600 transition"

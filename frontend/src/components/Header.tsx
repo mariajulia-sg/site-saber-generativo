@@ -84,7 +84,6 @@ const Header: React.FC = () => {
               <div className="pl-4 space-y-1">
                 <Link to="/consultoria" className="block hover:text-[#05A694]" onClick={() => setIsOpen(false)}>Consultoria</Link>
                 <Link to="/desenvolvimento" className="block hover:text-[#05A694]" onClick={() => setIsOpen(false)}>Desenvolvimento</Link>
-                <Link to="/suporte" className="block hover:text-[#05A694]" onClick={() => setIsOpen(false)}>Suporte</Link>
                 <Link to="/treinamentos" className="block hover:text-[#05A694]" onClick={() => setIsOpen(false)}>Treinamentos</Link>
               </div>
             )}

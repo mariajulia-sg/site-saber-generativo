@@ -11,13 +11,16 @@ import WecomCasePage from "./pages/Cases/Wecom";
 import RitmoPorKmCasePage from "./pages/Cases/RitmoPorKm";
 import FCRCasePage from "./pages/Cases/FCR";
 import LeaoCasePage from "./pages/Cases/Leao";
-
+import DevelopmentPage from "./pages/Development";
+import TrainiginsPage from "./pages/Training";
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/consultoria" element={<ConsultancyPage />} />
+        <Route path="/desenvolvimento" element={<DevelopmentPage />} />
+        <Route path="/treinamentos" element={<TrainiginsPage />} />
         <Route path="/filosofia" element={<PhilosophyPage />} />
         <Route path="/insights" element={<InsightsPage />} />
         <Route path="/quem-somos" element={<WhoWeArePage />} />

@@ -7,24 +7,25 @@ import Img2 from "../assets/imgs/blog2.png";
 import Img3 from "../assets/imgs/blog3.png"; 
 
 const InsightsPage: React.FC = () => {
-    const insightsData: InsightItem[] = [
+  
+  const insightsData: InsightItem[] = [
     {
       id: 1,
       image: Img1,
       title: "ChatGPT foi só o começo: conheça as novas fronteiras da IA",
-      link: "https://docs.google.com/document/d/1HOSYbDiLmP0m0K7HPWYD4aYFpVJDjOEvcJOOFNpGwe8/edit?tab=t.0",
+      link: "https://drive.google.com/file/d/1c9cwDzBdO9xYA8dF1PD4CmM-PeMIRkbo/view?usp=sharing",
     },
     {
       id: 2,
       image: Img2,
-      title: "Titulo 2",
-      link: "https://seudominio.com/blog/design-e-tecnologia",
+      title: "Além do ChatGPT: Os Tipos e as Tendências que Estão Redefinindo os Grandes Modelos de Linguagem (LLMs)",
+      link: "https://drive.google.com/file/d/1ost6NICfDA-8Xji8SPI9pK2PvgIHcpFp/view?usp=sharing",
     },
     {
       id: 3,
       image: Img3,
-      title: "Titulo 3",
-      link: "https://seudominio.com/blog/empatia-na-inovacao",
+      title: "O Modelo Maritaca e a Busca Brasileira pela Liderança em LLMs",
+      link: "https://drive.google.com/file/d/1e0z51jynvHD0v7RvFUgbrwij6Rf3d-MC/view?usp=sharing",
     },
   ];
 
@@ -33,10 +34,6 @@ const InsightsPage: React.FC = () => {
       <Header />
       <h1 className="text-4xl text-[#0F172A] font-serif font-bold text-center mt-5 mb-5">Insights</h1>
       <InsightsSection items={insightsData} infiniteScroll={false} />
-      <InsightsSection items={insightsData} infiniteScroll={false} />
-      <InsightsSection items={insightsData} infiniteScroll={false} />
-      <InsightsSection items={insightsData} infiniteScroll={false} />
-
       <Footer />
     </main>
   );

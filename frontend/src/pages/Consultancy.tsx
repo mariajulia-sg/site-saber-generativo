@@ -34,18 +34,12 @@ const ConsultancyPage: React.FC = () => {
   return (
     <main className="pt-20" >
       <Header />
-      <h1 className="text-4xl text-[#0F172A] font-serif font-bold text-center mt-5">Consultoria Estratégica</h1>
       <MainInfoSection
         bgColor="#F9FBFC"
-        title="Estratégia inteligente para transformar o futuro do seu negócio"
+        title="Consultoria Estratégica Especializada"
         sections={[
           {
-            subtitle: "Consultoria Estratégica Especializada",
-            text: "A Saber Generativo oferece consultoria estratégica especializada, unindo conhecimento humano e inteligência artificial para identificar oportunidades, otimizar processos e construir vantagem competitiva.",
-          },
-          {
-            subtitle: "Abordagem Colaborativa e Foco em Resultados",
-            text: "Com uma abordagem colaborativa e foco em resultados, ajudamos sua empresa a alinhar tecnologia, estratégia e cultura — criando planos de ação claros, sustentáveis e orientados ao crescimento.",
+            text: " A maestria reside em extrair valor das ferramentas certas com intenção e propósito. Com a nossa Consultoria Estratégica, descomplicamos a IA Generativa. Identificamos as melhores oportunidades de aplicação, alinhando a tecnologia aos seus objetivos de negócio e construindo um plano de ação claro para que você e a sua equipe possam co-criar um futuro mais eficiente.",
           },
         ]}
         imageSrc={ConsultoriaImg}
