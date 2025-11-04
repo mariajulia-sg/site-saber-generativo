@@ -59,8 +59,20 @@ const DevelopmentPage: React.FC = () => {
         buttonColor="#174980"
         buttonText="Conversar"
       />
-      <ServicesSection />
-      <Footer />
+        <ServicesSection
+          services={[
+            {
+              title: "Consultoria Estratégica",
+              description: "Oferecemos consultoria personalizada para otimizar seus processos.",
+              link: "/consultoria",
+            },
+            {
+              title: "Treinamento Personalizado",
+              description: "Capacitação e workshops para sua equipe.",
+              link: "/treinamentos",
+            },
+          ]}
+        />      <Footer />
     </main>
   );
 };

@@ -5,6 +5,7 @@ import InsightsSection, { InsightItem } from "../components/InsightsSection";
 import Img1 from "../assets/imgs/blog1.png";
 import Img2 from "../assets/imgs/blog2.png";
 import Img3 from "../assets/imgs/blog3.png"; 
+import NewsletterForm from "../components/NewslatterForm";
 
 const InsightsPage: React.FC = () => {
   
@@ -34,6 +35,11 @@ const InsightsPage: React.FC = () => {
       <Header />
       <h1 className="text-4xl text-[#0F172A] font-serif font-bold text-center mt-5 mb-5">Insights</h1>
       <InsightsSection items={insightsData} infiniteScroll={false} />
+
+      <NewsletterForm
+        bgColor="#174980"
+        buttonColor="#05A694"
+        />
       <Footer />
     </main>
   );

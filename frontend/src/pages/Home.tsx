@@ -50,7 +50,25 @@ const Home: React.FC = () => {
       <main className="flex-grow mt-16 mb-12">
         <BannerSection />
         <SloganSection />
-        <ServicesSection />
+        <ServicesSection
+          services={[
+            {
+              title: "Consultoria Estratégica",
+              description: "Oferecemos consultoria personalizada para otimizar seus processos.",
+              link: "/consultoria",
+            },
+            {
+              title: "Desenvolvimento de Soluções",
+              description: "Criação de soluções web e mobile de alta performance.",
+              link: "/desenvolvimento",
+            },
+            {
+              title: "Treinamento Personalizado",
+              description: "Capacitação e workshops para sua equipe.",
+              link: "/treinamentos",
+            },
+          ]}
+        />
         <InfoSection />
         <PhilosophySection />
 

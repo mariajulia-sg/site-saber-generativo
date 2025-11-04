@@ -7,15 +7,15 @@ interface FormSectionProps {
   bgColor?: string;
   buttonColor?: string;
   buttonText?: string;
-  titleColor?: string; // ← nova prop
+  titleColor?: string;
 }
 
 const FormSection: React.FC<FormSectionProps> = ({
   title = "O que podemos construir juntos?",
   bgColor = "#FAFDFF",
   buttonColor = "#FBAC50",
-  buttonText = "CONVERSAR",
-  titleColor = "#F5FAFB", // ← cor padrão
+  buttonText = "Conversar",
+  titleColor = "#F5FAFB",
 }) => {
   const [formData, setFormData] = useState({
     name: "",

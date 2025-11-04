@@ -7,13 +7,11 @@ interface Service {
   link: string;
 }
 
-const services: Service[] = [
-  { title: "Consultoria Estratégica", description: "Oferecemos consultoria personalizada para otimizar seus processos.", link: "/consultoria" },
-  { title: "Desenvolvimento de Soluções", description: "Criação de soluções web e mobile de alta performance.", link: "/desenvolvimento" },
-  { title: "Treinamento Personalizado", description: "Capacitação e workshops para sua equipe.", link: "/treinamentos" },
-];
+interface ServicesSectionProps {
+  services: Service[];
+}
 
-const ServicesSection: React.FC = () => {
+const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
   return (
     <section className="bg-[#F9FBFC] py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,8 +26,12 @@ const ServicesSection: React.FC = () => {
               to={service.link}
               className="bg-[#F59220] px-6 py-6 rounded-2xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 text-center block"
             >
-              <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
-              <p className="text-[#F7F7F7] text-sm leading-relaxed">{service.description}</p>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {service.title}
+              </h3>
+              <p className="text-[#F7F7F7] text-sm leading-relaxed">
+                {service.description}
+              </p>
             </Link>
           ))}
         </div>

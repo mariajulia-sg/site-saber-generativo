@@ -63,9 +63,6 @@ const TrainingsPage: React.FC = () => {
           reverse={true}
           hideImageOnMobile={false}
         />
-
-
-
       <InfoGridSection
         title="Por que investir em Treinamento Personalizado com a Saber Generativo?"
         cards={cards}
@@ -77,7 +74,21 @@ const TrainingsPage: React.FC = () => {
         buttonColor="#174980"
         buttonText="Conversar"
       />
-      <ServicesSection />
+        <ServicesSection
+          services={[
+            {
+              title: "Consultoria Estratégica",
+              description: "Oferecemos consultoria personalizada para otimizar seus processos.",
+              link: "/consultoria",
+            },
+            {
+              title: "Desenvolvimento de Soluções",
+              description: "Criação de soluções web e mobile de alta performance.",
+              link: "/desenvolvimento",
+            },
+           
+          ]}
+        />
       <Footer />
     </main>
   );

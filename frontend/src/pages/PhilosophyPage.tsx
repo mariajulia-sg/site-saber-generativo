@@ -42,6 +42,20 @@ const PhilosophyPage: React.FC = () => {
         hideImageOnMobile={true}
       />
 
+      <MainInfoSection
+          bgColor="#F9FBFC"
+          title="Hype da IA Motivação ou Manipulação"
+          sections={[
+            {
+              text: "Acreditamos que a Inteligência Artificial não substitui o humano — ela o amplifica. Assista ao vídeo e descubra nossa visão sobre o verdadeiro papel da IA",
+            },
+          ]}
+          videoSrc="https://www.youtube.com/embed/O9ESS6xxUTE"
+          reverse={true}
+          hideImageOnMobile={false}
+        />
+
+
       <InfoCardsSection
         items={cardsData}
         columns={2}
