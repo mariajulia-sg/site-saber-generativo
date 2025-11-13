@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Img1 from "../assets/imgs/wecom.png";
 import Img2 from "../assets/imgs/ImgRitmo.png";
 
@@ -30,11 +29,13 @@ const CasesSection: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10">
           {cases.map((item) => (
-            <Link
+            <a
               key={item.id}
-              to={item.link}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col"
-             >
+            >
               <img
                 src={item.image}
                 alt={item.title}
@@ -48,7 +49,7 @@ const CasesSection: React.FC = () => {
                   {item.text}
                 </p>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </div>

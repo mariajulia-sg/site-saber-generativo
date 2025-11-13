@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export interface InsightItem {
   id: number | string;
@@ -42,8 +41,10 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
             <div className="flex animate-infinite-scroll">
               {displayItems.map((item, index) => (
                 <div key={index} className="flex-shrink-0 w-80 sm:w-96 mx-4">
-                  <Link
-                    to={item.link}
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                   >
                     <img
@@ -51,13 +52,15 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
                       alt={item.title}
                       className="w-full h-56 sm:h-64 object-cover rounded-xl hover:scale-105 transition-transform duration-300"
                     />
-                  </Link>
-                  <Link
-                    to={item.link}
+                  </a>
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="mt-4 block text-lg font-semibold text-[#0F172A] font-serif leading-snug hover:text-[#1E3A8A] transition-colors duration-200"
                   >
                     {item.title}
-                  </Link>
+                  </a>
                 </div>
               ))}
             </div>
@@ -66,8 +69,10 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {items.map((item) => (
               <div key={item.id} className="flex flex-col items-start">
-                <Link
-                  to={item.link}
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full block overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <img
@@ -75,13 +80,15 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
                     alt={item.title}
                     className="w-full h-56 sm:h-64 md:h-72 object-cover rounded-xl hover:scale-105 transition-transform duration-300"
                   />
-                </Link>
-                <Link
-                  to={item.link}
+                </a>
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-4 block text-base sm:text-lg md:text-xl font-semibold text-[#0F172A] font-serif leading-snug hover:text-[#1E3A8A] transition-colors duration-200"
                 >
                   {item.title}
-                </Link>
+                </a>
               </div>
             ))}
           </div>

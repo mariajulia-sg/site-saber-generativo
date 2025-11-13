@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 interface Service {
   title: string;
@@ -21,9 +20,11 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
-            <Link
+            <a
               key={index}
-              to={service.link}
+              href={service.link}
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-[#F59220] px-6 py-6 rounded-2xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 text-center block"
             >
               <h3 className="text-xl font-semibold text-white mb-3">
@@ -32,7 +33,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
               <p className="text-[#F7F7F7] text-sm leading-relaxed">
                 {service.description}
               </p>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
