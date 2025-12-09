@@ -14,7 +14,7 @@ interface MainInfoSectionProps {
   }[];
   imageSrc?: string;
   imageAlt?: string;
-  videoSrc?: string; // nova prop para vídeo
+  videoSrc?: string;
   reverse?: boolean;
   hideImageOnMobile?: boolean;
   fadeInOnVisible?: boolean;

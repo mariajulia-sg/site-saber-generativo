@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
 
-    <!-- Estilos e script do Google Dialogflow Messenger -->
+    <!-- Estilos e script do Google Dialogflow Messenger (NOVO) -->
     <link
       rel="stylesheet"
       href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css"
@@ -26,14 +26,13 @@
   <body>
     <div id="root"></div>
 
-    <!-- Chatbot CelIA -->
-    <df-messenger
-      project-id="able-imprint-476813-n2"
-      agent-id="fe81ca85-9a76-4573-926e-bcf02834b694"
-      language-code="pt-br"
-      max-query-length="-1"
-    >
-      <df-messenger-chat-bubble chat-title="CelIA"></df-messenger-chat-bubble>
+  <df-messenger
+    project-id="agente-ia-sg-nivel-1"
+    agent-id="90137c81-b588-460a-a359-125db8b1b8cc"
+    language-code="pt-br"
+    max-query-length="-1"
+  >
+  <df-messenger-chat-bubble chat-title="Celia Saber Generativo"></df-messenger-chat-bubble>
     </df-messenger>
 
     <style>
@@ -45,9 +44,13 @@
 
         --df-messenger-font-color: #000;
         --df-messenger-font-family: "Google Sans", sans-serif;
+
+        /* cores originais */
         --df-messenger-chat-background: #f3f6fc;
-        --df-messenger-message-user-background: #9ef7e0;
+        --df-messenger-message-user-background: #d3e3fd;
         --df-messenger-message-bot-background: #ffffff;
+
+        /* mantendo estilo original */
         --df-messenger-button-titlebar-color: #183153;
         --df-messenger-send-icon: #183153;
 
@@ -62,9 +65,9 @@
 
       df-messenger-chat-bubble {
         --df-messenger-chat-bubble-background: #183153;
-        --df-messenger-chat-bubble-icon-color: #fff;
+        --df-messenger-chat-bubble-icon-color: #ffffff;
       }
-
     </style>
+
   </body>
 </html>

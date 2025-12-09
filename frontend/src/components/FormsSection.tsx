@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ReactComponent as WhatsAppLogo } from "../assets/imgs/whatsapp-logo-4456.svg";
 import ModalSection from "./ModalSection";
 
 interface FormSectionProps {
@@ -147,16 +146,6 @@ const FormSection: React.FC<FormSectionProps> = ({
           </button>
         </form>
       </div>
-
-      <a
-        href="https://wa.me/53991153651"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-transform hover:scale-110 z-50"
-        aria-label="Conversar no WhatsApp"
-      >
-        <WhatsAppLogo className="w-16 h-16" />
-      </a>
 
       <ModalSection
         isOpen={modalOpen}
