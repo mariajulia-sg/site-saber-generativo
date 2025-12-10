@@ -17,18 +17,22 @@ const CasesPage: React.FC = () => {
       image: ImgWecom,
       title: "Wecom: Transformando a comunicação corporativa com estratégia e IA.",
       link: "/cases/wecom",
+      target: "_self"
     },
     {
       id: 2,
       image: ImgRitmoPorKm,
       title: "Ritmo por Km: Profissionalização e inovação na gestão de eventos esportivos",
       link: "/cases/ritmo-por-km",
+      target: "_self"
     },
     {
       id: 3,
       image: ImgLeao,
       title: "Representações do Leão: Design e inteligência estratégica para otimização de embalagens.",
       link: "/cases/representacoes-leao",
+      target: "_self"
+
     },
     {
       id: 4,

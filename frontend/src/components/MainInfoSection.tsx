@@ -120,7 +120,7 @@ const MainInfoSection: React.FC<MainInfoSectionProps> = ({
                 {section.cta && (
                   <a
                     href={section.cta.link}
-                    target="_blank"
+                    target="_self"
                     rel="noopener noreferrer"
                     className="inline-block px-6 py-3 bg-[#174980] text-white font-semibold rounded-lg shadow hover:bg-[#0F1F5A] transition-colors duration-200"
                   >

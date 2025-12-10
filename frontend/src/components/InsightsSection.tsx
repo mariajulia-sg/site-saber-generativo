@@ -5,6 +5,7 @@ export interface InsightItem {
   image: string;
   title: string;
   link: string;
+  target?: "_blank" | "_self"; 
 }
 
 interface InsightsSectionProps {
@@ -41,10 +42,11 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
             <div className="flex animate-infinite-scroll">
               {displayItems.map((item, index) => (
                 <div key={index} className="flex-shrink-0 w-80 sm:w-96 mx-4">
+
                   <a
                     href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={item.target ?? "_self"}
+                    rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                     className="block overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                   >
                     <img
@@ -53,26 +55,30 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
                       className="w-full h-56 sm:h-64 object-cover rounded-xl hover:scale-105 transition-transform duration-300"
                     />
                   </a>
+
                   <a
                     href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={item.target ?? "_self"}
+                    rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                     className="mt-4 block text-lg font-semibold text-[#0F172A] font-serif leading-snug hover:text-[#1E3A8A] transition-colors duration-200"
                   >
                     {item.title}
                   </a>
+
                 </div>
               ))}
             </div>
           </div>
         ) : (
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {items.map((item) => (
               <div key={item.id} className="flex flex-col items-start">
+
                 <a
                   href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={item.target ?? "_self"}
+                  rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                   className="w-full block overflow-hidden rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
                 >
                   <img
@@ -81,14 +87,16 @@ const InsightsSection: React.FC<InsightsSectionProps> = ({
                     className="w-full h-56 sm:h-64 md:h-72 object-cover rounded-xl hover:scale-105 transition-transform duration-300"
                   />
                 </a>
+
                 <a
                   href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={item.target ?? "_self"}
+                  rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                   className="mt-4 block text-base sm:text-lg md:text-xl font-semibold text-[#0F172A] font-serif leading-snug hover:text-[#1E3A8A] transition-colors duration-200"
                 >
                   {item.title}
                 </a>
+
               </div>
             ))}
           </div>

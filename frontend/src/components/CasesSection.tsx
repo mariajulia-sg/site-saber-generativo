@@ -32,7 +32,7 @@ const CasesSection: React.FC = () => {
             <a
               key={item.id}
               href={item.link}
-              target="_blank"
+              target="_self"
               rel="noopener noreferrer"
               className="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col"
             >

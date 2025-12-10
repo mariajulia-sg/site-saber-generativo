@@ -20,12 +20,11 @@ const Footer: React.FC = () => {
           </Link>
         </nav>
 
-        {/* Créditos */}
         <div className="text-center sm:text-right text-xs sm:text-sm text-[#f0f4f8]/80 font-serif">
           Design e desenvolvimento por{" "}
           <a
             href="https://www.linkedin.com/in/mariajulialorenzoni"
-            target="_blank"
+            target="_self"
             rel="noopener noreferrer"
             className="underline hover:text-white transition-colors duration-200"
           >

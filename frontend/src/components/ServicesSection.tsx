@@ -23,7 +23,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({ services }) => {
             <a
               key={index}
               href={service.link}
-              target="_blank"
+              target="_self"
               rel="noopener noreferrer"
               className="bg-[#F59220] px-6 py-6 rounded-2xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 text-center block"
             >
