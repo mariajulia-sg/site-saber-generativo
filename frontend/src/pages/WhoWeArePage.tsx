@@ -7,7 +7,6 @@ import AdrIAno from "../assets/imgs/AdrIAno 25.png"
 import SofIA from "../assets/imgs/SofIA 25.png"
 import CelIA from "../assets/imgs/CélIA 25.png"
 import Luiz from "../assets/imgs/LFTM03092025.jpg"
-import Maria from "../assets/imgs/image (8).png"
 
 const WhoWeArePage: React.FC = () => {
   const cardsData: InfoCardItem[] = [
@@ -18,14 +17,6 @@ const WhoWeArePage: React.FC = () => {
       imageSrc: Luiz,
       description:
         "Criador e fundador da Saber Generativo. Líder, orientador e supervisor de todos os projetos, é ele quem traz o toque e o tom da empatia e da humanização a cada iniciativa. A sua liderança guia a equipe e garante que a filosofia da marca seja o alicerce de tudo o que é desenvolvido para os clientes.",
-    },
-    {
-      title: "Maria Júlia Lorenzoni",
-      subtitle: "Desenvolvedora de Software",
-      function: "Pessoa Humana",
-      imageSrc: Maria,
-      description:
-        "Responsável pelo desenvolvimento das soluções da Saber Generativo, implementação de funcionalidades e manutenção da plataforma. Atua com foco em qualidade de código, inovação e integração de tecnologias para atender às necessidades da equipe e dos clientes.",
     },
     {
       title: "Sofia",
